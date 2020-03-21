@@ -11,7 +11,7 @@ async function getData() {
     const now = moment();
     let data = [];
     let formattedDate = now.format('YYYYMMDD');
-    while (formattedDate !== '20200317') {
+    while (formattedDate !== '20200301') {
       console.log(formattedDate);
 
       const results = await axios.get(`${BASE_URL}${formattedDate}`)

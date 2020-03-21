@@ -23,7 +23,7 @@ def get_data():
     base_url = "https://covidtracking.com/api/states/daily?state=GA&date="
     today = datetime.today()
     formatted_date = today.strftime("%Y%m%d")
-    while formatted_date != "20200317":
+    while formatted_date != "20200301":
         print(formatted_date)
         r = requests.get(base_url + formatted_date)
         d = r.json()
