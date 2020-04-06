@@ -39,7 +39,7 @@ def calculate_daily_new_cases(data):
     for idx, obj in enumerate(data):
         if idx < (length - 1):
             prev = data[idx + 1]
-            if 'positive' in prev and 'positive' in obj:
+            if obj['positive'] is not None and prev['positive'] is not None:
                 diff = obj['positive'] - prev['positive']
                 obj['newCases'] = diff
         else:
