@@ -27,7 +27,7 @@ def get_data():
         print(formatted_date)
         r = requests.get(base_url + formatted_date)
         d = r.json()
-        if isinstance(d, list) == False:
+        if isinstance(d, list) == False and 'error' not in d:
             data.append(d)
         today = today - timedelta(days=1)
         formatted_date = today.strftime("%Y%m%d")

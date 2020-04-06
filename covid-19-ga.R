@@ -1,4 +1,4 @@
-df <- read.csv("~/Projects/covid-19-ga/covid-19-ga-data.csv")
+df <- read.csv("~/Projects/covid-19-ga/covid-19-ga-data-python.csv")
 
 library(ggplot2)
 library(lubridate)
