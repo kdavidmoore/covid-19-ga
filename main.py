@@ -23,7 +23,7 @@ def get_data():
     base_url = "https://covidtracking.com/api/states/daily?state=GA&date="
     today = datetime.today()
     formatted_date = today.strftime("%Y%m%d")
-    while formatted_date != "20200301":
+    while formatted_date != "20200315":
         print(formatted_date)
         r = requests.get(base_url + formatted_date)
         d = r.json()
@@ -39,7 +39,7 @@ def calculate_daily_new_cases(data):
     for idx, obj in enumerate(data):
         if idx < (length - 1):
             prev = data[idx + 1]
-            if prev['positive'] is not None:
+            if 'positive' in prev and 'positive' in obj:
                 diff = obj['positive'] - prev['positive']
                 obj['newCases'] = diff
         else:
