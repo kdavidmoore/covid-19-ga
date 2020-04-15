@@ -11,7 +11,7 @@ __license__ = "MIT"
 def main():
     """ Main entry point of the app """
     data = get_data()
-    calculate_daily_new_cases(data)
+    # calculate_daily_new_cases(data)
     print(data)
     write_csv(data)
 
@@ -23,7 +23,7 @@ def get_data():
     base_url = "https://covidtracking.com/api/states/daily?state=GA&date="
     today = datetime.today()
     formatted_date = today.strftime("%Y%m%d")
-    while formatted_date != "20200316":
+    while formatted_date != "20200330":
         print(formatted_date)
         r = requests.get(base_url + formatted_date)
         d = r.json()

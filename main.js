@@ -11,7 +11,7 @@ async function getData() {
     const now = moment();
     let data = [];
     let formattedDate = now.format('YYYYMMDD');
-    while (formattedDate !== '20200316') {
+    while (formattedDate !== '20200330') {
       console.log(formattedDate);
 
       const results = await axios.get(`${BASE_URL}${formattedDate}`)
@@ -69,7 +69,7 @@ async function writeCsv(data) {
 async function main() {
   try {
     const data = await getData();
-    calculateNewDailyCases(data);
+    // calculateNewDailyCases(data);
     console.log(JSON.stringify(data));
     return writeCsv(data);
   } catch (err) {
