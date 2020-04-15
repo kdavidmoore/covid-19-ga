@@ -34,6 +34,7 @@ def get_data():
     return data
 
 
+# No longer needed
 def calculate_daily_new_cases(data):
     length = len(data)
     for idx, obj in enumerate(data):
