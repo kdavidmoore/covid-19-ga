@@ -42,6 +42,7 @@ async function getData() {
   }
 }
 
+// No longer needed
 function calculateNewDailyCases(data) {
   for (let i = 0, len = data.length; i < len; i += 1) {
     const elem = data[i];
