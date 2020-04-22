@@ -7,7 +7,7 @@ df$date <- as.Date(as.character(df$date), format="%Y%m%d")
 
 p <- ggplot(df, aes(x=df$date, y=df$positiveIncrease)) +
   geom_bar(stat="identity", fill="steelblue") +
-  geom_text(aes(label=df$positiveIncrease), vjust=1.6, color="white", size=3.5) +
+  geom_text(aes(label=df$positiveIncrease), vjust=1.6, color="white", size=2.5) +
   labs(title="Daily New COVID-19 Cases in Georgia", x="Date", y="Daily New Cases") +
   theme_minimal()
 
