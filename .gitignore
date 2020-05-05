@@ -4,6 +4,7 @@ build
 node_modules
 stats.json
 package-lock.json
+.Rhistory
 
 # Cruft
 .DS_Store
