@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """
 Module Docstring
 """
@@ -11,40 +12,15 @@ __license__ = "MIT"
 def main():
     """ Main entry point of the app """
     data = get_data()
-    # calculate_daily_new_cases(data)
     print(data)
     write_csv(data)
 
 
 def get_data():
-    from datetime import datetime, timedelta
     import requests
-    data = []
-    base_url = "https://covidtracking.com/api/states/daily?state=GA&date="
-    today = datetime.today()
-    formatted_date = today.strftime("%Y%m%d")
-    while formatted_date != "20200330":
-        print(formatted_date)
-        r = requests.get(base_url + formatted_date)
-        d = r.json()
-        if isinstance(d, list) == False and 'error' not in d:
-            data.append(d)
-        today = today - timedelta(days=1)
-        formatted_date = today.strftime("%Y%m%d")
-    return data
-
-
-# No longer needed
-def calculate_daily_new_cases(data):
-    length = len(data)
-    for idx, obj in enumerate(data):
-        if idx < (length - 1):
-            prev = data[idx + 1]
-            if obj['positive'] is not None and prev['positive'] is not None:
-                diff = obj['positive'] - prev['positive']
-                obj['newCases'] = diff
-        else:
-            obj['newCases'] = None
+    base_url = "https://covidtracking.com/api/v1/states/GA/daily.json"
+    r = requests.get(base_url)
+    return r.json()
 
 
 def write_csv(data):
