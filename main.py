@@ -9,13 +9,6 @@ __version__ = "0.1.0"
 __license__ = "MIT"
 
 
-def main():
-    """ Main entry point of the app """
-    data = get_data()
-    print(data)
-    write_csv(data)
-
-
 def get_data():
     import requests
     base_url = "https://covidtracking.com/api/v1/states/GA/daily.json"
@@ -30,6 +23,13 @@ def write_csv(data):
         dict_writer = csv.DictWriter(outfile, keys)
         dict_writer.writeheader()
         dict_writer.writerows(data)
+
+
+def main():
+    """ Main entry point of the app """
+    data = get_data()
+    print(data)
+    write_csv(data)
 
 
 if __name__ == "__main__":
