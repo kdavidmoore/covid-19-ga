@@ -11,7 +11,7 @@ __license__ = "MIT"
 
 def get_data():
     import requests
-    base_url = "https://covidtracking.com/api/v1/states/GA/daily.json"
+    base_url = "https://covidtracking.com/api/v1/states/ga/daily.json"
     r = requests.get(base_url)
     return r.json()
 

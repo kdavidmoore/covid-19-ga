@@ -3,7 +3,7 @@
 const axios = require('axios');
 const fs = require('fs');
 const { parseAsync } = require('json2csv');
-const BASE_URL = 'https://covidtracking.com/api/v1/states/GA/daily.json';
+const BASE_URL = 'https://covidtracking.com/api/v1/states/ga/daily.json';
 
 async function getData() {
   try {
