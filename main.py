@@ -11,7 +11,7 @@ __license__ = "MIT"
 
 def get_data():
     import requests
-    base_url = "https://covidtracking.com/api/v1/states/ga/daily.json"
+    base_url = "https://covidtracking.com/api/v1/states/nc/daily.json"
     r = requests.get(base_url)
     return r.json()
 
@@ -19,7 +19,7 @@ def get_data():
 def write_csv(data):
     import csv
     keys = data[0].keys()
-    with open("covid-19-ga-data-python.csv", "w", newline="") as outfile:
+    with open("covid-19-nc-data-python.csv", "w", newline="") as outfile:
         dict_writer = csv.DictWriter(outfile, keys)
         dict_writer.writeheader()
         dict_writer.writerows(data)
