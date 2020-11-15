@@ -7,9 +7,9 @@ df$date <- as.Date(as.character(df$date), format="%Y%m%d")
 
 df <- df[df$date >= "2020-08-01",]
 
-p <- ggplot(df, aes(x=df$date, y=df$positiveIncrease)) +
+p <- ggplot(df, aes(x=date, y=positiveIncrease)) +
   geom_bar(stat="identity", fill="steelblue") +
-  geom_text(aes(label=df$positiveIncrease), vjust=1.6, color="white", size=2.5) +
+  geom_text(aes(label=positiveIncrease), vjust=1.6, color="white", size=2.5) +
   labs(title="COVID-19 Daily New Cases in Georgia", x="Date", y="positiveIncrease") +
   geom_hline(yintercept=1000, color = "red") +
   theme_minimal()
