@@ -21,7 +21,7 @@ def get_data(state):
 def write_csv(data, state):
     import csv
     keys = data[0].keys()
-    filename = "covid-19-" + state + "-data-python.csv"
+    filename = "covid-19-" + state + ".csv" 
     with open(filename, "w", newline="") as outfile:
         dict_writer = csv.DictWriter(outfile, keys)
         dict_writer.writeheader()

@@ -20,7 +20,7 @@ async function writeCsv(data) {
     const fields = Object.keys(data[0]);
     const opts = { fields };
     const csvFile = await parseAsync(data, opts);
-    return fs.writeFileSync('covid-19-ga-data.csv', csvFile, 'utf8');
+    return fs.writeFileSync('covid-19-ga.csv', csvFile, 'utf8');
   } catch (err) {
     throw err;
   }
